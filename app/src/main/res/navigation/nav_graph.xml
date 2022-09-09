@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/createPodcastFragment">
+
+    <fragment
+        android:id="@+id/createPodcastFragment"
+        android:name="com.shrikant.voicerecordingapp.ui.createPodcast.CreatePodcastFragment"
+        android:label="fragment_create_podcast"
+        tools:layout="@layout/fragment_create_podcast" >
+        <action
+            android:id="@+id/action_createPodcastFragment_to_recordPodcastFragment"
+            app:destination="@id/recordPodcastFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordPodcastFragment"
+        android:name="com.shrikant.voicerecordingapp.ui.recordPodcast.RecordPodcastFragment"
+        android:label="fragment_record_podcast"
+        tools:layout="@layout/fragment_record_podcast" />
+</navigation>

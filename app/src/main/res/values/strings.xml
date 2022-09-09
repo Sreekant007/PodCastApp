@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">VoiceRecordingApp</string>
+
+
+    <string name="createPodcast">Create Podcast </string>
+    <string name="noPodcast">No Podcast Available</string>
+    <string name="saveRecording">Save Recording </string>
+    <string name="enterRecordingTitle">Enter Recording Title</string>
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="importFiles">Import Files</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recording">Recording</string>
+    <string name="save">Save</string>
+    <string name="undo">Undo</string>
+    <string name="continueRecording">Continue</string>
+
+    <string name="dialog_permission_title">Permission required</string>
+    <string name="dialog_permission_default_message">Default message</string>
+    <string name="dialog_permission_button_positive">OK</string>
+
+    <string name="permission_camera_access_required">Camera access is required for sending image attachments, please enable it</string>
+    <string name="mandatory_permission_access_required">Camera access is required for sending image attachments, please enable it in settings</string>
+    <string name="permission_granted">Permission Granted</string>
+</resources>
