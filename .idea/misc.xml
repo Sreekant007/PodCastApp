@@ -8,8 +8,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_save.xml" value="0.36041666666666666" />
         <entry key="app/src/main/res/layout/fragment_create_podcast.xml" value="0.32037037037037036" />
-        <entry key="app/src/main/res/layout/fragment_record_podcast.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_recording_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_record_podcast.xml" value="0.34479166666666666" />
+        <entry key="app/src/main/res/layout/item_recording_list.xml" value="0.36041666666666666" />
       </map>
     </option>
   </component>

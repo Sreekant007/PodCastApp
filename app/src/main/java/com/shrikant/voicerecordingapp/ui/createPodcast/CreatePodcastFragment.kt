@@ -62,6 +62,8 @@ class CreatePodcastFragment : Fragment() {
 
         }
 
+        
+
         bindObserver()
 
     }

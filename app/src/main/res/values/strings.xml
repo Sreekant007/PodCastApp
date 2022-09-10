@@ -19,6 +19,13 @@
     <string name="dialog_permission_default_message">Default message</string>
     <string name="dialog_permission_button_positive">OK</string>
 
+    <string name="dialog_title">Save Podcast</string>
+    <string name="edt_save_name">Enter Recording Name</string>
+    <string name="save_podcast">Save</string>
+
+
+    <string name="stop_recording_title">You can save this as it is,\n continue recording</string>
+
     <string name="permission_camera_access_required">Camera access is required for sending image attachments, please enable it</string>
     <string name="mandatory_permission_access_required">Camera access is required for sending image attachments, please enable it in settings</string>
     <string name="permission_granted">Permission Granted</string>
