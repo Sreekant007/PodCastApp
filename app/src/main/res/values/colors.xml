@@ -13,6 +13,7 @@
     <color name="button_color">#825FFC</color>
     <color name="record_button_color">#E8845F</color>
     <color name="unselected_button_color">#9F9F9F</color>
+    <color name="grey_color_varient">#E3E3E3</color>
     <color name="grey_text_color">#969A9E</color>
     <color name="red">#E22929</color>
 

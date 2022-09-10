@@ -20,7 +20,6 @@ class RecordingListAdapter(private val onRecordingClick: (RecordingModel, positi
             binding.recordingTitle.text = recordingModel.title
             binding.recordingDuration.text = recordingModel.recordingDuration
 
-            binding.recordingDate.text = recordingModel.createdDate
 
             if (position == lastItemPlayed) {
                 if (recordingModel.isPlaying) {
@@ -36,6 +35,8 @@ class RecordingListAdapter(private val onRecordingClick: (RecordingModel, positi
                 binding.playIcon.setBackgroundResource(R.drawable.ic_baseline_play_arrow_24)
 
             }
+
+            binding.recordingDate.text = recordingModel.isPlaying.toString()
 
             binding.root.setOnClickListener {
                 lastItemPlayed = position

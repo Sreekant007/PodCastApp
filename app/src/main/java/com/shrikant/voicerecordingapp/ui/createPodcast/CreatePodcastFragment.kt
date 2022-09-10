@@ -3,7 +3,6 @@ package com.shrikant.voicerecordingapp.ui.createPodcast
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,10 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.shrikant.voicerecordingapp.R
 import com.shrikant.voicerecordingapp.data.model.RecordingModel
 import com.shrikant.voicerecordingapp.databinding.FragmentCreatePodcastBinding
-import com.shrikant.voicerecordingapp.utils.Constant.TAG
 import java.io.File
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 class CreatePodcastFragment : Fragment() {
@@ -48,8 +44,7 @@ class CreatePodcastFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val timeStamp: String = SimpleDateFormat("dd-mm").format(Date())
-        Log.d(TAG, "DDATE" + timeStamp)
+
         binding.recordingList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recordingAdapter = RecordingListAdapter(::onRecordingClick)
         binding.recordingList.adapter = recordingAdapter
@@ -93,7 +88,6 @@ class CreatePodcastFragment : Fragment() {
             }
         })
 
-
     }
 
     override fun onResume() {
@@ -103,12 +97,13 @@ class CreatePodcastFragment : Fragment() {
 
     fun onRecordingClick(recording: RecordingModel, position: Int) {
         createPodcastViewModel.updateRecordingPlayStatus(recording)
-        if (createPodcastViewModel.isMediaPlaying.value == true) {
+
+        if (recording.isPlaying == true) {
             recording.isPlaying = false
             createPodcastViewModel.stopMedia()
         } else {
             recording.isPlaying = true
-            createPodcastViewModel.playMedia(recording.title)
+            createPodcastViewModel.playMedia(recording)
         }
     }
 

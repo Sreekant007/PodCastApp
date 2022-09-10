@@ -16,10 +16,6 @@ class CreatePodcastViewModel @Inject constructor(private val recordingRepository
     private val _recordingList = MutableLiveData<List<RecordingModel>>()
     val recordingList: LiveData<List<RecordingModel>>
         get() = _recordingList
-    private val _isMediaPlaying = MutableLiveData<Boolean>()
-    val isMediaPlaying: LiveData<Boolean>
-        get() = _isMediaPlaying
-
 
     private val context = getApplication<Application>().applicationContext
     private val mediaPlayerManager = MediaPlayerManager()
@@ -29,9 +25,14 @@ class CreatePodcastViewModel @Inject constructor(private val recordingRepository
         _recordingList.postValue(recording)
     }
 
-    fun playMedia(filName: String) {
-        _isMediaPlaying.postValue(true)
-        mediaPlayerManager.playMedia(filName, context)
+    fun playMedia(recordingModel: RecordingModel) {
+        if (recordingModel.isPlaying == true) {
+            stopMedia()
+            mediaPlayerManager.playMedia(recordingModel.title, context)
+        } else {
+            mediaPlayerManager.playMedia(recordingModel.title, context)
+
+        }
     }
 
     fun updateRecordingPlayStatus(recordingModel: RecordingModel) {
@@ -40,7 +41,6 @@ class CreatePodcastViewModel @Inject constructor(private val recordingRepository
 
 
     fun stopMedia() {
-        _isMediaPlaying.postValue(false)
         mediaPlayerManager.releaseMediaPlayer()
     }
 
