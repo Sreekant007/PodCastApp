@@ -3,6 +3,7 @@ package com.shrikant.voicerecordingapp.ui.createPodcast
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.shrikant.voicerecordingapp.R
 import com.shrikant.voicerecordingapp.data.model.RecordingModel
 import com.shrikant.voicerecordingapp.databinding.FragmentCreatePodcastBinding
+import com.shrikant.voicerecordingapp.utils.Constant.TAG
 import java.io.File
 
 
@@ -44,7 +46,7 @@ class CreatePodcastFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        Log.d(TAG, "TT" + createPodcastViewModel.isMediaPlaying.value.toString())
         binding.recordingList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recordingAdapter = RecordingListAdapter(::onRecordingClick)
         binding.recordingList.adapter = recordingAdapter
@@ -62,7 +64,7 @@ class CreatePodcastFragment : Fragment() {
 
         }
 
-        
+
 
         bindObserver()
 
@@ -110,4 +112,17 @@ class CreatePodcastFragment : Fragment() {
     }
 
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+
+    override fun onStop() {
+        super.onStop()
+        createPodcastViewModel.stopMedia()
+    }
+
+
 }
+

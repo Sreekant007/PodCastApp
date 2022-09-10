@@ -39,7 +39,7 @@ class RecordViewModel @Inject constructor(private val recordingRepository: Recor
         _isTimerStared.postValue(true)
     }
 
-    fun stoprecording(fileName: String) {
+    fun stoprecording() {
         mediaRecorderManager.stopRecording()
         _isTimerStared.postValue(false)
     }

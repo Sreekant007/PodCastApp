@@ -21,7 +21,6 @@ class RecordingListAdapter(private val onRecordingClick: (RecordingModel, positi
             binding.recordingDuration.text = recordingModel.recordingDuration
 
             binding.recordingDate.text = recordingModel.createdDate
-
             if (position == lastItemPlayed) {
                 if (recordingModel.isPlaying) {
                     recordingModel.isPlaying = true

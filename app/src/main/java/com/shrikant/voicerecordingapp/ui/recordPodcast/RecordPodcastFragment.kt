@@ -66,7 +66,7 @@ class RecordPodcastFragment : Fragment() {
 
         binding.buttonStopRecording.setOnClickListener {
             binding.recordingTimer.stop()
-            recordingViewModel.stoprecording("hello")
+            recordingViewModel.stoprecording()
         }
 
         binding.btnUndo.setOnClickListener {
@@ -111,7 +111,6 @@ class RecordPodcastFragment : Fragment() {
                 binding.buttonPlay.setImageResource(R.drawable.ic_baseline_pause_24)
             } else {
                 binding.buttonPlay.setImageResource(R.drawable.ic_baseline_play_arrow_24)
-
             }
         })
     }
@@ -148,4 +147,14 @@ class RecordPodcastFragment : Fragment() {
     }
 
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+
+    override fun onStop() {
+        super.onStop()
+        recordingViewModel.stopMedia()
+    }
 }
